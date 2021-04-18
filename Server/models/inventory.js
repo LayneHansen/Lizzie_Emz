@@ -5,6 +5,10 @@ const InventorySchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    price: {
+        type: number,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
