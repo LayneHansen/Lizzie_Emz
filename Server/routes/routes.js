@@ -1,18 +1,30 @@
 const router = require('express').Router();
-const { InventoryItem } = require('../models');
+const { Item } = require('../models');
+const { find } = require('../models/inventory');
 
 router
     .route('/')
     .get((req, res) => {
+
+        Item
+        .find({})
+        .then(data => {
+            console.log('TODO GET');
+            console.log({ data });
+            res.json({ success: true });
+        })
+        .catch(err => {
+            console.log({ err });
+            res.json({ success: false });
+        })
         console.log('hit the get route');
         res.json({ success: true });
     })
     .post((req, res) => {
-        console.log({ reqBody: req.body });
+        console.log('hit the post route');
         res.json({ success: true })
 
-        InventoryItem
-        console.log(InventoryItem);
+        Item
         .create({
             text: req.body.text
         })
@@ -27,4 +39,23 @@ router
         
     });
 
+    router
+        .route('/:id')
+        .delete((req, res) => {
+            console.log(req.params);
+            
+            Item
+            .findByIdAndDelete(req.params.id)
+            .then(data => {
+                console.log({ data });
+                res.json({ success: true });
+            })
+            .catch(err => {
+                console.log({ err });
+                res.json({ success: false})
+            })
+
+    });
+
+        
 module.exports = router;

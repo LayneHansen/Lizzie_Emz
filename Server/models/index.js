@@ -1,3 +1,3 @@
 module.exports = {
-    InventoryItem: require('./inventory')
+    Item: require('./inventory')
 };
