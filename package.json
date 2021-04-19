@@ -1,0 +1,16 @@
+{
+  "name": "Lizzie_Emz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:LayneHansen/Lizzie_Emz.git",
+  "author": "LayneHansen <layne.d.hansen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:server": "nodemon ./Server/server.js",
+    "start": "node ./Server.server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.4"
+  }
+}

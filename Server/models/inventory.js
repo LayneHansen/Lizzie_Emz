@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const InventorySchema = new mongoose.Schema({
-    name: {
+    text: {
         type: String,
         required: true
     },
     price: {
-        type: number,
+        type: Number,
         required: true
     },
     date: {
