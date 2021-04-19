@@ -9,7 +9,7 @@ router
         Item
         .find({})
         .then(data => {
-            console.log('TODO GET');
+            console.log('ITEM GET');
             console.log({ data });
             res.json({ success: true });
         })
